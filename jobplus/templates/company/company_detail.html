@@ -53,38 +53,90 @@
 {% endblock %}
 
 {% block body %}
-    <div class="row">
-        <img src="https://soo9s.me/blogShow.jpg" alt="..." class="img-thumbnail"
+    <div class="row mt30 mb30" id="infoBoard">
+        <div class="col-md-2 col-sm-3">
+            <div class="img-warp">
+                <img src="{{ company.logo }}" alt="..." class="img-thumbnail"
              style="float:left;width: 140px; height: 140px;">
-        <div class="jobs">
-
-
-            <h3>
-                <a href="">{{ company.name }}</a>
-            </h3>
-
-            <ul class="job-detail__requirements">
-                <li class="salary"><span>
-                </span></li>
-                {{ company }}
-                <li class="cities">
-                    {{ company }}
-                </li>
-                <li>
-                    1
-                </li>
-                <li>
-                    2
-                </li>
-                <li><span class="ml5 inline-block"></span></li>
-            </ul>
-            <ul class="taglist--inline mb0">
-                <li><a>1</a></li>
-            </ul>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-7">
+            <div class="company-name">
+                <h3>{{ company.name }}</h3>
+                <p class="company-desc ellipsis text-muted">{{ company.description }}</p>
+                <ul class="job-detail__requirements">
+                    <li class="salary"><span>
+                    </span>{{ company.tags }}</li>
+                    <li><span class="ml5 inline-block"></span></li>
+                </ul
+                <div>
+                    <a href="{{ company.site }}" rel="nofollow">{{ company.site }}</a>
+                    <p>{{ company.name }}</p>
+                </div>
+            </div>
         </div>
     </div>
-    <hr>
-    <div>
-    <h4 style="color: black">关于公司</h4>
-    </div>
+    <div class="company-detail__detail">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="company-detail__mod">
+                    <div class="company-detail__mod--heading">
+                        <h4>关于我们</h4>
+                    </div>
+                    <div class="company-detail__mod--content" id="detailBoard">
+                        <div class="mt30 fmt">
+                            <p>{{ company.about }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-detail__mod bg-gray">
+                    <div class="company-detail__mod--heading mb20" style="margin-bottom:20px;">
+                        <h4 class="title-red">公司技术开发栈</h4>
+                    </div>
+                    <div class="company-detail__mod--content" id="techBoard">
+                        <div class="develop-desc fmt">
+                            <p>{{ company.stack }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-detail__mod">
+                    <div class="company-detail__mod--heading">
+                        <h4>特色福利</h4>
+                    </div>
+                    <div class="company-detail__mod--content" data-mod="benefit" data-proto="benefitsLists">
+                        <div class="company-detail__benefit">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="company-detail__benefit-item">
+                                        <span class="benefits benefits-beach"></span>
+                                        <span class="text">{{ company.welfares }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-3">
+                <div class="company-detail__mod">
+                    <div class="company-detail__mod--content">
+                        <div class="widget-job-list widget-job-list-company-detail">
+                            <h5 class="widget-job-list__heading">招聘职位</h5>
+                            <ul class="widget-job-list__list">
+                                <li class="widget-job-list__item">
+                                    <a href="#">
+                                        <h3 class="widget-job-list__item--title">数据工程师</h3>
+                                    </a>
+                                    <p class="widget-job-list__item--detail">
+                                        <span class="salary">15k-20k</span>
+                                        <span class="degree_requirement">大学本科</span>
+                                        <span class="experience_requirement">5years</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>    
 {% endblock %}

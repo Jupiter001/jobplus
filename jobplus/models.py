@@ -156,6 +156,9 @@ class Jobs(Base):
     company_id = db.Column(db.Integer, db.ForeignKey('company.id', ondelete='CASCADE'))
     company = db.relationship('Company', uselist=False)
     views_count = db.Column(db.Integer, default=0)
+    #增加职位描述和职位需求
+    job_description=db.Column(db.String(256))
+    job_requirement=db.Column(db.String(256))
 
     def __repr__(self):
         return '<Job {}>'.format(self.name)
